@@ -313,14 +313,15 @@
     .centerBlock {
       position: absolute;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      top: auto;
+      bottom: 10%;
+      transform: translate(-50%, 0);
       max-width: min(680px, 84vw);
       text-align: center;
-      color: #fff;
+      color: #000;
       padding: 18px 22px;
       border-radius: 18px;
-      background: rgba(0,0,0,0.18);
+      background: #fff;
       box-shadow: 0 14px 36px rgba(0,0,0,0.35);
       z-index: 2;
     }
@@ -363,6 +364,8 @@
       padding: 24px 22px;
       pointer-events: auto;
       opacity: 1;
+      max-height: calc(80vh - 48px);
+      overflow-y: auto;
     }
 
     .leafBody {
@@ -389,7 +392,7 @@
 
 
   <script>
-    // Data model: exactly 3 parent items (no bullet point), children as circles when present.
+    // Data model: parent items with children as circles when present.
     const DATA = [
       {
         id: "montessori-scientist",
@@ -427,7 +430,7 @@
       {
         id: "second-plane",
         title: "Second Plane of Development",
-        centerHtml: "<p>The Second Plane of Development is one of 4 developmental stages identified by Maria Montessori, each representing a distinct way a human interacts with the world based on their age. Each plane of development lasts 6 years, with all 4 lasting from birth to 24 years old.</p><img src=\"https://dynalist.io/u/hDXnomQP3nMdDBIXQkTyosXo\" alt=\"Four planes of development\" /><p>The second plane is the plane of &quot;conscious imagination&quot;. Children begin to desire intellectual independence, take charge of their learning, and develop moral curiosity.</p>",
+        centerHtml: "<p>The Second Plane of Development is one of 4 developmental stages identified by Maria Montessori, each representing a distinct way a human interacts with the world based on their age. Each plane of development lasts 6 years, with all 4 lasting from birth to 24 years old.</p><img src=\"images/four-planes.png\" alt=\"Four planes of development\" /><p style=\"font-size: 0.9em; color: #888;\">Source: https://www.newberryhouse.com/the-montessori-method-and-planes-of-development/</p><p>The second plane is the plane of &quot;conscious imagination&quot;. Children begin to desire intellectual independence, take charge of their learning, and develop moral curiosity.</p>",
         children: [
           {
             title: "Sensitive periods",
@@ -440,6 +443,45 @@
           {
             title: "Characteristics",
             contentHtml: "<p>In the second plane the child is moving from the concrete to the abstract. They still benefit from hands-on materials, but their works shifts to the mental side. The second plane has the following characteristics:</p><ul><li>increased capacity for logical reasoning</li><li>emerging critical thinking</li><li>ability to synthesize information</li><li>growing imaginitive capacity</li><li>grappling with moral reasoning, right &amp; wrong, fairness &amp; equality</li><li>desire for purpose beyond self</li><li>interest in societal roles</li><li>increased bonding with peers</li><li>awareness of group responsibilities</li><li>sensitivity to respect &amp; disrespect</li><li>heightened emotional fluctuations</li></ul>"
+          }
+        ]
+      },
+      {
+        id: "references",
+        title: "References",
+        contentHtml: "<ul><li>Montessori for Everyone. (n.d.). <em>The Five Great Lessons</em> [Episode 66]. https://montessoriforeveryone.com/The-Five-Great-Lessons_ep_66-1.html</li><li>MSL Educational Resources. (n.d.). <em>Montessori's Five Great Lessons</em>. https://www.msl-edu.org/montessoris-five-great-lessons</li><li>Midtown Montessori. (n.d.). <em>About Montessori</em>. https://midtownmontessori.org/about-montessori/</li><li>Montessori Training. (2017, May 10). <em>Montessori Today: Chapter 4 - Key Lessons</em>. https://montessoritraining.blogspot.com/2017/05/montessori-today-chapter-4-key-lessons.html</li><li>Miss Barbara. (n.d.). <em>Miss Barbara's Montessori Resources</em>. http://missbarbara.net/</li><li>Montessori Kiwi. (n.d.). <em>3 Part Cards for Montessori Elementary Grades</em>. https://montessorikiwi.com/blogs/news/3-part-cards-for-montessori-elementary-grades?srsltid=AfmBOoop7tKrxde7ITmgTBvA4dY-W35gJn4l7WLg5HYIiFd8RtNDJ_D7</li></ul>",
+        children: []
+      },
+      {
+        id: "lessons-montessori",
+        title: "Lessons in a Montessori Classroom",
+        children: [
+          {
+            title: "The Great Lessons",
+            contentHtml: "<img src=\"images/cosmic-education.png\" alt=\"Cosmic Education\" style=\"width: min(420px, 70vw); max-height: 220px; object-fit: contain; border-radius: 12px; display: block; margin: 12px auto;\" /><p>The Great Lessons are the backbone of Montessori cosmic education. They follow an order that not only represents the flow of curriculum in the classroom, but also represent a unique, insightful way of viewing history and our place in the universe.</p><p>I have long been interested in coming up with my own ways of categorizing the studies of our universe. My thinking used to focus on considering how many categories of study we can divide human knowledge into. Shall we have a separate category for space and chemistry, or should they be one category? Should human anthropology be a sub-category of sociology, or science? But it is impossible to categorize our studies in a way that is <strong>completely exhaustive and mutually exclusive</strong>.</p><p>The Montessori approach has an answer for this: rather than looking for an ontologically perfect system of organization, we follow a structure that is much more... fractally. Like a series of bubbles that we keep zooming in on, we start with <strong>everything</strong>.</p><p><strong>The First Great Lesson: Coming of the Universe and the Earth</strong></p><p>Once we have tackled that, we ask ourselves, what is the next step? What comes next in the story of us, after we examine the whole universe? We cannot focus on categorizing everything in the universe because then we would spend the vast majority of curriculum focusing on planets we know nothing about, in places unknown, and celestial objects that remain undiscovered. This would not be a very satifying study. So we move to the next biggest, broadest category of study that we want to focus on:</p><p><strong>The Second Great Lesson: Coming of Life</strong></p><p>After this, we start to see our ultimate goal more clearly. We need to answer questions about us. We want to know, what's the deal with humans? We can capture this in 3 questions: Where did we come from? Who are we? Where are we going? We have answered the first question, and now we seek to answer the second question.</p><p><strong>The Third Great Lesson: Coming of Human Beings</strong></p><p>Finally we will answer the third question. Also, seriously, what's up with human beings? Why do we dominate the world? Why are we more advanced than aardvarks and zebras, and what does advanced even mean? The final great lessons seek to answer these questions.</p><p><strong>The Fourth Great Lesson: The Story of Writing</strong></p><p><strong>The Fifth Great Lesson: The Story of Numbers</strong></p>"
+          },
+          {
+            title: "Key lessons",
+            contentHtml: "<p>Key Lessons are like mini great lessons (shall we say, good lessons?). They focus on more specific points of interest introduced by each of the great lessons. An examples from the first great lesson are Grandfather Rock, or Stellar Nucleosynthesis. You might introduce these to a group of students that has a particular excitement about stars.</p><p>After the second great lesson, you could introduce key lessons of the Long Black Line to show how much time has existed without the presence of humans, or the Timeline of Life</p><p>The third great lesson has key lessons focused on history. When we talk about the study of history, we usually REALLY mean the history of humans: these key lessons could be the Timeline of Civilizations, Timeline of Life, or Fundamental Needs.</p><p>For the 4th and 5th great lessons, these introduce an entire curriculum, so lessons will more so follow what is best suited for the child to learn.</p>"
+          },
+          {
+            id: "three-period-lessons",
+            title: "Three-period lessons",
+            centerHtml: "<p><strong>This is</strong></p><p><strong>Show me</strong></p><p><strong> What is this?</strong></p>",
+            children: [
+              {
+                title: "In the first plane of development",
+                contentHtml: "<p><strong>Period 1: This is...</strong></p><p>The first period is just focused on introducing nomenclature. The child is simply watching as the guide introduces them to the new concepts they are learning. In the first plane, this is often nomenclature.</p><p><strong>Period 2: Show me...</strong></p><p>This period is the most crucial, and should take the longest. This is about reviewing and reinforcing vocabulary. The child is now allowed to interact with material to enable a concrete, physical connection with the ideas being learned. For example, if a child is learning shapes, the guid might lay out a circle, triangle, and rectangle. The guide will then ask, \"can you hand me the triangle?\".</p><p><strong>Period 3: What is this?</strong></p><p>Now, the child is ready to identify things on their own. In the second period, they are asked to identify the object, and in the third period, they must indepently produce the name of the object. Rather than \"Show me the triangle\", we point to the triangle, and ask, \"What is this?\". This is the final step in solidifying the acquisition of a new concept.</p>"
+              },
+              {
+                title: "In the second plane of development",
+                contentHtml: "<p>The second plane gives way for more sophisticated learning, and as guides, we must be careful not to patronize the student. Egos are now at play, and the child demands more intellectual respect, but we ultimately still follow the framework of the three-period lesson. The main difference is in the 2nd and 3rd periods: these are done through independent and collaborative work. We often use three part cards, where the child must match terminology to it's pictures and descriptions. These are used in the first plane as well, but usually as 2 part cards (picture and term). In the second plane, we introduce more complex descriptions as a third part.</p><img src=\"images/3-part-cards.png\" alt=\"3 Part Cards\" />"
+              }
+            ]
+          },
+          {
+            title: "Follow-up work",
+            contentHtml: "<p>Follow-up work can be anything that enhances the development of the child's mind. It is on us as guides to be attuned to what our class needs. We need to be asking what gets each child excited about learning, and paying attention to the kind of engagement that each child craves.</p><p>One of my favorite follow-up works I have given was on the topic of plants. I have a class that is passionate about comics, and creating their own stories, so naturally, I though they would love an assignment that allowed them to create their own stories. I asked for them to each pick a plant, and make a character based on that plant. Once they created the plant, they needed to make a comic strip about their plant. This made them think about science in a more flexible way: If a dandelion had a personality, what would it be, and why? This encourage the students to research their plants, and draw connections between characteristics of plants and characteristics of humans.</p>"
           }
         ]
       }
@@ -611,11 +653,13 @@
     
     // Create 3 parent circles
     function createNodes() {
-      // Fixed positions (responsive-ish): left / center / right
+      // Fixed positions (responsive-ish): left / center / right / bottom-right / bottom-left
       const positions = [
         { x: 20, y: 48, d: 220 },
         { x: 50, y: 30, d: 250 },
-        { x: 80, y: 52, d: 220 }
+        { x: 80, y: 52, d: 220 },
+        { x: 75, y: 75, d: 150 },
+        { x: 25, y: 75, d: 150 }
       ];
 
       DATA.forEach((item, i) => {
@@ -685,6 +729,8 @@
       const rect = field.getBoundingClientRect();
       const baseMax = Math.min(rect.width, rect.height) / 2 - 40;
       const isSecondPlane = parentItem && parentItem.id === "second-plane";
+      const isLessons = parentItem && parentItem.id === "lessons-montessori";
+      const isThreePeriod = parentItem && parentItem.id === "three-period-lessons";
       const maxR = Math.max(isSecondPlane ? 200 : 140, baseMax);
       const minR = Math.max(isSecondPlane ? 140 : 90, maxR * (isSecondPlane ? 0.7 : 0.6));
 
@@ -698,16 +744,40 @@
 
         let tx = 0;
         let ty = 0;
-        if (isSecondPlane) {
+        let r = 70;
+
+        if (isLessons) {
+          bubble.style.top = i === 0 ? "20%" : i === 1 ? "50%" : "80%";
+          if (i === 0) { // The Great Lessons - top row
+            tx = 0;
+            ty = 0;
+            r = 80;
+          } else if (i === 1) { // Key lessons - second row
+            tx = 0;
+            ty = 0;
+            r = 65;
+          } else { // three small - third row, spaced wider
+            const spacing = rect.width * 0.55;
+            const start = -spacing;
+            tx = start + (i - 2) * spacing;
+            ty = 0;
+            r = 45;
+          }
+        } else if (isThreePeriod) {
+          const spacing = rect.width * 1.8;
+          tx = i === 0 ? -spacing / 2 : spacing / 2;
+          ty = 0;
+          r = 60;
+        } else if (isSecondPlane) {
           const count = Math.max(children.length - 1, 1);
           const spacing = Math.max(320, (rect.width * 0.8) / count);
           const start = -((children.length - 1) * spacing) / 2;
           tx = start + i * spacing;
         } else {
           const angle = (i / children.length) * Math.PI * 2 + (Math.random() * 0.6 - 0.3);
-          const r = minR + Math.random() * (maxR - minR);
-          tx = Math.cos(angle) * r;
-          ty = Math.sin(angle) * r;
+          const r_calc = minR + Math.random() * (maxR - minR);
+          tx = Math.cos(angle) * r_calc;
+          ty = Math.sin(angle) * r_calc;
         }
 
         bubble.style.setProperty("--tx", `${tx}px`);
@@ -715,12 +785,16 @@
         bubble.style.animationDelay = `${Math.random() * 2}s`;
 
         bubble.addEventListener("click", () => {
-          openLeafPopup(
-            child.title,
-            child.contentHtml || child.content || "",
-            true,
-            Boolean(child.contentHtml)
-          );
+          if (child.children && child.children.length > 0) {
+            openFocusFromNode(bubble, child);
+          } else {
+            openLeafPopup(
+              child.title,
+              child.contentHtml || child.content || "",
+              true,
+              Boolean(child.contentHtml)
+            );
+          }
         });
 
         field.appendChild(bubble);
